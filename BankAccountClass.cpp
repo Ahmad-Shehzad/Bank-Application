@@ -172,36 +172,49 @@ class Menus{
         }
     }
 
-    public: void MainMenu(){
-    
+public: void MainMenu()
+    {
 
+        string input;
         char opt;
-
+        string errorMessage = "\nPlease enter a valid choice: A,B or C.\n";
         cout << "\n-----------Main Menu-----------\n\n";
         cout << "A. Existing Customer\n";
         cout << "B. New Customer\n";
         cout << "C. Exit\n\n";
         cout << "Please enter an option.\n";
 
-        cin >> opt;
+        cin >> input;
 
-        if (opt=='A'){
+        if (input.length() != 1)
+        {
+            opt = input[0];
+        }
+        else
+        {
+            cout << errorMessage;
+            MainMenu();
+        }
+
+        if (opt == 'A')
+        {
             existingAccountMenu();
         }
-        else if (opt=='B'){
+        else if (opt == 'B')
+        {
             newAccountMenu();
         }
-        else if (opt=='C'){
-            cout<<"\nThank you for using our services.\n\n";
+        else if (opt == 'C')
+        {
+            cout << "\nThank you for using our services.\n\n";
         }
-        else{
-            cout<<"\nPlease enter a valid choice, A or B.\n";
+        else
+        {
+            cout << errorMessage;
             MainMenu();
         }
     }
 };
-
-
 
 int main(){
     Menus menu;
