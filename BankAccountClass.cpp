@@ -172,7 +172,7 @@ class Menus{
         }
     }
 
-public: void MainMenu()
+    public: void MainMenu()
     {
 
         string input;
@@ -186,7 +186,7 @@ public: void MainMenu()
 
         cin >> input;
 
-        if (input.length() != 1)
+        if (input.length() == 1)
         {
             opt = input[0];
         }
